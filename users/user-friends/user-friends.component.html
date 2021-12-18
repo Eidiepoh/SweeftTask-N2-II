@@ -1,0 +1,25 @@
+<div>
+  <h2 style="margin-left: 10px"><strong>Friends: </strong></h2>
+  <div>
+    <div class="home" *ngFor="let _userFriends of friendBase">
+      <div
+        *ngFor="let user of userFriends"
+        (click)="onSelect(user.id)"
+        class="list-item"
+      >
+        <div class="small-Window">
+          <div class="list-item-content">
+            <img
+              alt="{{ user.name }}"
+              src="{{ user.imageUrl }}?v={{ user.id }}"
+            />
+          </div>
+          <strong class="user-name">
+            {{ user.prefix }} {{ user.name }} {{ user.lastName }}
+          </strong>
+          <div class="list-item-content-description">{{ user.title }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

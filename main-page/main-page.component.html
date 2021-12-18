@@ -1,0 +1,17 @@
+<div class="home" *ngFor="let dataBases of userBase">
+  <div
+    (click)="onSelect(data.id)"
+    *ngFor="let data of dataBases"
+    class="list-item"
+  >
+    <div class="small-Window">
+      <div class="list-item-content">
+        <img alt="{{ data.name }}" src="{{ data.imageUrl }}?v={{ data.id }}" />
+      </div>
+      <strong class="user-name">
+        {{ data.prefix }} {{ data.name }} {{ data.lastName }}
+      </strong>
+      <div class="list-item-content-description">{{ data.title }}</div>
+    </div>
+  </div>
+</div>

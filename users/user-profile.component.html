@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="header" *ngIf="singleUser">
+    <div>
+      <img
+        class="firstImage"
+        alt="{{ singleUser.name }}"
+        src="{{ singleUser.imageUrl }}?v={{ singleUser.id }}"
+      />
+    </div>
+    <fieldset class="left-info">
+      <legend>Info</legend>
+      <div>
+        <strong
+          >{{ singleUser.prefix }} {{ singleUser.name }}
+          {{ singleUser.lastName }}
+        </strong>
+      </div>
+      <div>
+        <i>{{ singleUser.title }} </i>
+      </div>
+      <br />
+
+      <div><u>Email</u>: {{ singleUser.email }}</div>
+
+      <div><u>Ip Address</u>: {{ singleUser.ip }}</div>
+
+      <div><u>Ip Address</u>: {{ singleUser.ip }}</div>
+
+      <div><u>Job Area</u>: {{ singleUser.jobArea }}</div>
+
+      <div><u>Job Type</u>: {{ singleUser.jobType }}</div>
+    </fieldset>
+
+    <fieldset class="right-info">
+      <legend>Address</legend>
+      <div>
+        <strong>
+          {{ singleUser.company.name }} {{ singleUser.company.suffix }}
+        </strong>
+      </div>
+      <u>City</u>: {{ singleUser.address.city }}
+      <div><u>Country</u>: {{ singleUser.address.country }}</div>
+      <div><u>State</u>: {{ singleUser.address.state }}</div>
+      <div><u>Street Address</u>: {{ singleUser.address.streetAddress }}</div>
+      <div><u>ZIP</u>: {{ singleUser.address.zipCode }}</div>
+    </fieldset>
+  </div>
+
+  <div class="roadMap">
+    <a *ngFor="let test of roadMap" href="/user/{{ test.id }}">
+      {{ test.prefix }} {{ test.name }} {{ test.lastName }} ></a
+    >
+  </div>
+
+  <app-user-friends></app-user-friends>
+</div>
